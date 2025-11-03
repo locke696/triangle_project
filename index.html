@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeoGebra 交互教程平台</title>
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+  <style>
+    body { 
+      margin: 0; 
+      padding: 20px; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+    }
+    
+    .container {
+      max-width: 1536px; /* 限制最大宽度，使其在大屏幕上更美观 */
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #333;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 10px;
+    }
+
+    /* 导航菜单样式 */
+    #project-nav { 
+      list-style: none; 
+      padding: 0; 
+    }
+    #project-nav li { 
+      margin: 15px 0; 
+    }
+    #project-nav a { 
+      font-size: 1.2em; 
+      text-decoration: none; 
+      color: #007bff;
+      transition: color 0.3s;
+    }
+    #project-nav a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    /* 教程容器 */
+    #tutorial-container { 
+      display: none; /* 默认隐藏 */ 
+    }
+    #ggbApplet { 
+      margin: 20px auto; 
+      display: block; 
+      border: 1px solid #ddd;
+    }
+
+    /* 返回目录按钮的样式 */
+    #back-to-nav {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 15px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #6c757d; /* 中性灰色 */
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    #back-to-nav:hover {
+      background-color: #5a6268; /* 悬停时颜色变深 */
+    }
+
+    .loading { text-align: center; color: #666; }
+    .error { text-align: center; color: red; }
+  </style>
+</head>
+<body>
+
+  <!-- 用一个容器包裹所有内容，使其居中并有边框 -->
+  <div class="container">
+
+    <!-- 导航菜单 -->
+    <nav id="project-selector">
+      <h1>GeoGebra 交互教程</h1>
+      <h2>请选择一个教程：</h2>
+      <ul id="project-nav">
+        <!-- 列表将由 JS 动态生成 -->
+      </ul>
+    </nav>
+
+    <!-- 教程主容器 -->
+    <div id="tutorial-container">
+      
+      <!-- *** 新增的返回按钮 *** -->
+      <a href="index.html" id="back-to-nav">← 返回目录</a>
+
+      <h1 id="tutorial-title"></h1>
+      <div id="ggbApplet">
+        <p class="loading">加载中...</p>
+        <p class="error" style="display: none;">加载教程失败，请检查项目ID是否正确。</p>
+      </div>
+      <audio id="tutorial_audio" preload="auto"></audio>
+    </div>
+  
+  </div> <!-- end .container -->
+  
+  <!-- 主应用入口 -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
