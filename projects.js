@@ -92,6 +92,29 @@ export const PROJECTS = {
       },
     }
   },
+  
+  //项目五：面积法求线段
+  excise_solve: {
+    title: '通过面积计算求线段长度',
+    base64Path: './assets/ggb/excise_solve.ggb.base64.txt',
+    audioBasePath: './assets/audio/excise_solve/',
+    config: {
+      ggbParams: {
+        width: 1470, height: 647, showMenuBar: false, 
+        showToolBar: false, appName: "classic",
+      },
+      audioMapping: {
+        1: 'step1.mp3', 
+        2: 'step2.mp3', 
+        3: 'step3.mp3',
+        4: 'step4.mp3', 
+        5: 'step5.mp3', 
+        6: 'step6.mp3', 
+        7: 'step7.mp3',
+        8: 'step8.mp3',        
+      },
+    }
+  },
   // 你可以在这里添加更多项目...
   // another_project: { ... }
 };
